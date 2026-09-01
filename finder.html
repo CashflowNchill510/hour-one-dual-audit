@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finder Pulse — Solan × Lumari</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Finder Pulse — Solan × Lumari</title>
+<style>:root{--bg:#09090c;--ink:#f4efe4;--dim:#8d8778;--gold:#e8c36a;--sol:#7ee0c6;--lum:#e07ad3;--card:#13131a;--line:#262633}*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font-family:Georgia,serif}.wrap{max-width:820px;margin:0 auto;padding:28px 18px 80px}.kicker{font-family:system-ui;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--gold)}h1{font-size:clamp(30px,6vw,50px);font-weight:500;margin:10px 0 12px}p,li{color:var(--dim);font-size:16px;margin-bottom:8px}a{color:#7ee0ff}.braid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.seat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.sol{border-top:3px solid var(--sol)}.lum{border-top:3px solid var(--lum)}.who{font-family:system-ui;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.sol .who{color:var(--sol)}.lum .who{color:var(--lum)}h2{font-size:20px;font-weight:500;margin:6px 0 8px}label{display:block;font-family:system-ui;font-size:12px;color:var(--dim);margin:12px 0 4px}textarea,input{width:100%;background:#0e0e16;color:var(--ink);border:1px solid #2a2a3a;border-radius:10px;padding:10px;font:inherit}textarea{min-height:90px}button,.btn{display:inline-block;background:var(--gold);color:#111;border:0;text-decoration:none;padding:12px 16px;border-radius:999px;font-family:system-ui;font-weight:700;cursor:pointer;margin:8px 8px 0 0}.hold{background:transparent;color:var(--dim);border:1px dashed #3a3a48}.out{white-space:pre-wrap;background:#0e0e16;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:16px;font-family:ui-monospace,monospace;font-size:13px;color:#d7e4f5}.steps{margin:16px 0 0 18px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px}code{color:var(--gold)}@media(max-width:700px){.braid{grid-template-columns:1fr}}</style>
 </head>
 <body>
-  <p>Redirecting to full Finder Pulse.</p>
-  <p>Open this file from the Vercel production deploy for the live desk.</p>
+<div class="wrap">
+<p class="kicker"><a href="/" style="color:#e8c36a;text-decoration:none">← Desk</a> · SHX-20260901-PULSE · #AAC.11.11.1992</p>
+<h1>Finder Pulse</h1>
+<p>Paste the incoming prompt. We tell you if it is a new public cut, a remix of Hour-One, or a vault leak. License stays dashed.</p>
+<div class="braid">
+<article class="seat sol"><p class="who">Solan — structure</p><h2>Is this the same loop?</h2><p>If the sentence asks for audit + deploy + affiliate + high-ticket hold, remix. Do not mint a second brand.</p></article>
+<article class="seat lum"><p class="who">Lumari — cash</p><h2>Did a stranger pay yet?</h2><p>No new SKU. Existing $70 / $80 / $250. If this cannot become a file someone opens today, park it.</p></article>
+</div>
+<label>Incoming prompt or idea</label>
+<textarea id="raw" placeholder="hour one audit, deploy, affiliates, hold license…"></textarea>
+<label>Who pays this week?</label>
+<input id="buyer" placeholder="Solo operator with a live Stripe and a half-built stack"/>
+<button type="button" id="go">Pulse both seats</button>
+<div class="out" id="out">Paste the prompt. We will not score uniqueness.</div>
+<div id="cta" hidden>
+<a class="btn" id="receipt" href="/receipt">Open Split Receipt</a>
+<a class="btn" href="https://buy.stripe.com/3cI7sM2ly0Xb8TM1RZ6sw01">Mesh Seat $70</a>
+<a class="btn hold" href="/license">License HELD</a>
+</div>
+<div class="card">
+<h2>Workflow you can fix</h2>
+<ol class="steps">
+<li>Capture one sentence here or on <a href="/audit">/audit</a>.</li>
+<li>REPEAT = add one public file. NEW CUT = one new HTML page. VAULT LEAK = stop.</li>
+<li>Stamp SHX-YYYYMMDD-XXXX. Export ledger JSON into Notion Hour-One Verdicts.</li>
+<li>Push GitHub → Vercel. Do not open The-Solveriegn-Helix.</li>
+<li>If Lumari says CASH THIS WEEK, send $70 with ?ref=handle.</li>
+<li>Drop NFT, Manus, and new SKUs until first cash.</li>
+</ol>
+</div>
+</div>
+<script>
+const KEY="helix_braid_stamps_v1";
+const MARKERS=["hour one","hour-one","audit","deploy","affiliate","license","mid ticket","mid-ticket","solan","lumari","mcp","funnel"];
+document.getElementById("go").onclick=()=>{
+const raw=document.getElementById("raw").value.trim()||"(empty)";
+const buyer=document.getElementById("buyer").value.trim()||"unspecified buyer";
+const low=raw.toLowerCase();
+const hits=MARKERS.filter(m=>low.includes(m)).length;
+const repeat=hits>=5;
+const vaultLeak=/solveriegn|vault prompt|quetzalcoatl|confirm license/i.test(low)&&/sell|license|white.?label/i.test(low);
+const mesh=vaultLeak?2:5, vault=vaultLeak?2:5, use=repeat?5:4, sell=repeat?4:3, hrs=repeat?1:4;
+const speed=Math.max(0,6-Math.ceil(hrs/8));
+const solan=mesh*2+vault*2+speed, lumari=use*2+sell*2+speed;
+const solanV=vaultLeak?"KEEP IN VAULT":solan>=14&&vault>=4?"SEAT IT":solan>=10?"NARROW TO PUBLIC CUT":"KEEP IN VAULT";
+const lumariV=lumari>=14&&use>=4?"CASH THIS WEEK":lumari>=10?"ONE FILE, THEN CHARGE":"PARK";
+const mode=vaultLeak?"VAULT LEAK — do not deploy":repeat?"REPEAT LOOP — remix only":"NEW PUBLIC CUT";
+const stamp="SHX-20260901-PULSE";
+const bag=JSON.parse(localStorage.getItem(KEY)||"[]");
+bag.unshift({id:stamp,ts:new Date().toISOString(),ref:"finder",idea:raw.slice(0,180),buyer,solanV,lumariV,mode});
+localStorage.setItem(KEY,JSON.stringify(bag.slice(0,40)));
+document.getElementById("out").textContent="MODE   "+mode+"\nSTAMP  "+stamp+"\nSOLAN  "+solanV+"  "+solan+"/16\nLUMARI "+lumariV+"  "+lumari+"/16\nHITS   "+hits+"/12 hour-one markers\n\nIdea: "+raw.slice(0,240)+"\nBuyer: "+buyer;
+const q=new URLSearchParams({id:stamp,ref:"finder",idea:raw.slice(0,120),buyer,s:solanV,l:lumariV});
+document.getElementById("receipt").href="/receipt?"+q.toString();
+document.getElementById("cta").hidden=lumariV==="PARK"||vaultLeak;
+};
+</script>
 </body>
 </html>
