@@ -8,11 +8,11 @@
 </head>
 <body>
 <div class="wrap">
-<p class="kicker"><a href="/" style="color:#e8c36a;text-decoration:none">← Desk</a> · SHX-20260901-PULSE · #AAC.11.11.1992</p>
+<p class="kicker"><a href="/" style="color:#e8c36a;text-decoration:none">← Desk</a> · SHX-20260901-FIX · #AAC.11.11.1992</p>
 <h1>Finder Pulse</h1>
-<p>Paste the incoming prompt. We tell you if it is a new public cut, a remix of Hour-One, or a vault leak. License stays dashed.</p>
+<p>Paste the incoming prompt. We tell you if it is a new public cut, a remix of Hour-One, or a vault leak. License stays dashed. Stamps increment — the frozen PULSE id is dead.</p>
 <div class="braid">
-<article class="seat sol"><p class="who">Solan — structure</p><h2>Is this the same loop?</h2><p>If the sentence asks for audit + deploy + affiliate + high-ticket hold, remix. Do not mint a second brand.</p></article>
+<article class="seat sol"><p class="who">Solan — structure</p><h2>Is this the same loop?</h2><p>If the sentence asks for audit + deploy + affiliate + high-ticket hold, remix one file. Do not mint a second brand.</p></article>
 <article class="seat lum"><p class="who">Lumari — cash</p><h2>Did a stranger pay yet?</h2><p>No new SKU. Existing $70 / $80 / $250. If this cannot become a file someone opens today, park it.</p></article>
 </div>
 <label>Incoming prompt or idea</label>
@@ -29,18 +29,25 @@
 <div class="card">
 <h2>Workflow you can fix</h2>
 <ol class="steps">
-<li>Capture one sentence here or on <a href="/audit">/audit</a>.</li>
-<li>REPEAT = add one public file. NEW CUT = one new HTML page. VAULT LEAK = stop.</li>
+<li>Capture one sentence here. REPEAT = one public file. NEW CUT = one new HTML page. VAULT LEAK = stop.</li>
 <li>Stamp SHX-YYYYMMDD-XXXX. Export ledger JSON into Notion Hour-One Verdicts.</li>
-<li>Push GitHub → Vercel. Do not open The-Solveriegn-Helix.</li>
+<li>Push GitHub. If Vercel still says repo_no_access, manual deploy the existing project — do not create a third one.</li>
 <li>If Lumari says CASH THIS WEEK, send $70 with ?ref=handle.</li>
-<li>Drop NFT, Manus, and new SKUs until first cash.</li>
+<li>Drop NFT, Manus, and new SKUs until first cash. High-ticket stays dashed until CONFIRM LICENSE.</li>
 </ol>
 </div>
 </div>
 <script>
 const KEY="helix_braid_stamps_v1";
 const MARKERS=["hour one","hour-one","audit","deploy","affiliate","license","mid ticket","mid-ticket","solan","lumari","mcp","funnel"];
+function stampNow(){
+  const d=new Date();
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,"0");
+  const day=String(d.getDate()).padStart(2,"0");
+  const code=d.toISOString().slice(11,16).replace(":","");
+  return "SHX-"+y+m+day+"-"+code;
+}
 document.getElementById("go").onclick=()=>{
 const raw=document.getElementById("raw").value.trim()||"(empty)";
 const buyer=document.getElementById("buyer").value.trim()||"unspecified buyer";
@@ -54,11 +61,14 @@ const solan=mesh*2+vault*2+speed, lumari=use*2+sell*2+speed;
 const solanV=vaultLeak?"KEEP IN VAULT":solan>=14&&vault>=4?"SEAT IT":solan>=10?"NARROW TO PUBLIC CUT":"KEEP IN VAULT";
 const lumariV=lumari>=14&&use>=4?"CASH THIS WEEK":lumari>=10?"ONE FILE, THEN CHARGE":"PARK";
 const mode=vaultLeak?"VAULT LEAK — do not deploy":repeat?"REPEAT LOOP — remix only":"NEW PUBLIC CUT";
-const stamp="SHX-20260901-PULSE";
+const stamp=stampNow();
+const fix=repeat
+  ?"OWNER FIX\n1. Remix one file. Do not mint a new brand.\n2. Link GitHub app to Vercel team (repo_no_access still blocks auto-deploy).\n3. Keep $70 / $80 / $250. License dashed.\n4. First cash before Manus."
+  :"OWNER FIX\n1. Ship one public HTML page on this desk.\n2. Stamp + Notion row.\n3. $70 only after a stranger can open it.";
 const bag=JSON.parse(localStorage.getItem(KEY)||"[]");
 bag.unshift({id:stamp,ts:new Date().toISOString(),ref:"finder",idea:raw.slice(0,180),buyer,solanV,lumariV,mode});
 localStorage.setItem(KEY,JSON.stringify(bag.slice(0,40)));
-document.getElementById("out").textContent="MODE   "+mode+"\nSTAMP  "+stamp+"\nSOLAN  "+solanV+"  "+solan+"/16\nLUMARI "+lumariV+"  "+lumari+"/16\nHITS   "+hits+"/12 hour-one markers\n\nIdea: "+raw.slice(0,240)+"\nBuyer: "+buyer;
+document.getElementById("out").textContent="MODE   "+mode+"\nSTAMP  "+stamp+"\nSOLAN  "+solanV+"  "+solan+"/16\nLUMARI "+lumariV+"  "+lumari+"/16\nHITS   "+hits+"/12 hour-one markers\n\nIdea: "+raw.slice(0,240)+"\nBuyer: "+buyer+"\n\n"+fix;
 const q=new URLSearchParams({id:stamp,ref:"finder",idea:raw.slice(0,120),buyer,s:solanV,l:lumariV});
 document.getElementById("receipt").href="/receipt?"+q.toString();
 document.getElementById("cta").hidden=lumariV==="PARK"||vaultLeak;
