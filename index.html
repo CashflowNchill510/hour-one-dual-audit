@@ -5,8 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Two-Seat Relay — Solan × Lumari</title>
   <meta name="description" content="Public cut of the Dual Audit. Two seats stamp one sentence. License half stays dashed." />
+  <style>
+    :root{--bg:#09090c;--ink:#f4efe4;--dim:#8d8778;--gold:#e8c36a;--sol:#7ee0c6;--lum:#e07ad3;--card:#13131a;--line:#262633}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font-family:Georgia,serif}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 80px}
+    .kicker{font-family:system-ui;letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold)}
+    h1{font-size:clamp(34px,7vw,58px);font-weight:500;margin:10px 0 12px}
+    .sub{color:var(--dim);max-width:680px;font-size:18px}
+    nav{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 34px}
+    a.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;padding:12px 18px;border-radius:999px;font-family:system-ui;font-weight:700}
+    a.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+    a.hold{background:transparent;color:var(--dim);border:1px dashed #3a3a48}
+    .braid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .seat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+    .sol{border-top:3px solid var(--sol)}
+    .lum{border-top:3px solid var(--lum)}
+    .who{font-family:system-ui;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .sol .who{color:var(--sol)}
+    .lum .who{color:var(--lum)}
+    h2{font-size:22px;font-weight:500;margin:8px 0}
+    .seat p,.card p,li{color:var(--dim)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:24px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .price{font-family:system-ui;color:var(--gold);font-size:22px}
+    .held{color:#c47a7a;font-family:system-ui;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    footer{margin-top:48px;color:#5c584e;font-family:system-ui;font-size:13px}
+    code{color:var(--gold)}
+    ol{margin:8px 0 0 18px}
+    @media(max-width:700px){.braid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-<!-- source in artifacts; full styled page deployed via Vercel files -->
-<p>Canonical: use production Vercel. This commit continues in next push.</p>
-</body></html>
+  <div class="wrap">
+    <p class="kicker">#AAC.11.11.1992 · SHX-20260901-RELAY</p>
+    <h1>Solan × Lumari<br/>Two-Seat Relay</h1>
+    <p class="sub">Hour-one remixed cut. You do not sell a course. You stamp a sentence with two voices, hand the partner a receipt with the license half torn off, and take $70 if a stranger can use the file this week.</p>
+    <nav>
+      <a class="btn" href="/audit">Run both seats</a>
+      <a class="btn ghost" href="/relay">Relay a receipt</a>
+      <a class="btn ghost" href="https://buy.stripe.com/3cI7sM2ly0Xb8TM1RZ6sw01">Mesh Seat $70</a>
+      <a class="btn hold" href="/license">License HELD</a>
+    </nav>
+    <div class="braid">
+      <article class="seat sol">
+        <p class="who">Solan — structure</p>
+        <h2>Does it sit on the public mesh?</h2>
+        <p>If the sentence needs The-Solveriegn-Helix vault, Solan kills the deploy. Public cut only. Uniqueness is not scored this hour.</p>
+      </article>
+      <article class="seat lum">
+        <p class="who">Lumari — cash</p>
+        <h2>Will a stranger pay this week?</h2>
+        <p>One file. Existing Stripe. No new SKU. No lab. If they cannot open a receipt on their phone, park it.</p>
+      </article>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Public cut</h3>
+        <div class="price">Relay Receipt</div>
+        <p>Stamp + share URL. Partner sees both verdicts and the dashed license half.</p>
+      </article>
+      <article class="card">
+        <h3>Mid-ticket</h3>
+        <div class="price">$70 → $80 → $250</div>
+        <p>Planning session, Mid-Tier, Engine. Same Eternal Dragon AI links. No new product until cash proof.</p>
+      </article>
+      <article class="card">
+        <h3>High-ticket</h3>
+        <p class="held">Gated</p>
+        <p>$8,500–$25,000 Sovereign Architecture License. No checkout until you type CONFIRM LICENSE.</p>
+      </article>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Loop this hour</h3>
+      <ol>
+        <li>Capture one sentence and one buyer.</li>
+        <li>Score both seats on /audit.</li>
+        <li>Mint SHX stamp. Save to the browser ledger.</li>
+        <li>Relay the receipt to a partner. Do not mention uniqueness.</li>
+        <li>If Lumari says CASH THIS WEEK, send the $70 link with ?ref=handle.</li>
+      </ol>
+    </div>
+    <footer>Anthony Angel Campos · Forever Forward ION · vault stays private · Siempre adelante.</footer>
+  </div>
+</body>
+</html>
