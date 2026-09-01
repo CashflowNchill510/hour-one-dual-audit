@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Braid Stamp Ledger</title>
+  <style>
+    :root { --bg:#08080b; --ink:#f4efe4; --dim:#8d8778; --gold:#e8c36a; --card:#12121a; --line:#262633; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--ink); font-family:Georgia,serif; padding:24px 16px 80px; max-width:860px; margin:0 auto; }
+    a { color:#e8c36a; }
+    h1 { font-size:32px; font-weight:500; margin:10px 0 8px; }
+    p { color:var(--dim); margin-bottom:16px; }
+    .row { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin:10px 0; }
+    .id { font-family:ui-monospace,monospace; color:var(--gold); font-size:13px; }
+    .meta { font-family:system-ui,sans-serif; font-size:12px; color:var(--dim); margin:6px 0; }
+    button { background:var(--gold); color:#111; border:0; border-radius:999px; padding:10px 14px; font-weight:700; font-family:system-ui; cursor:pointer; margin-right:8px; }
+  </style>
+</head>
+<body>
+  <p style="font-family:system-ui;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--gold)"><a href="index.html">&larr; Desk</a></p>
+  <h1>Stamp ledger</h1>
+  <p>Stamps live in this browser only. Export JSON to drop into Notion Hour-One Verdicts or a GitHub issue. No vault files here.</p>
+  <p>
+    <button type="button" id="exp">Export JSON</button>
+    <button type="button" id="wipe">Wipe this browser</button>
+  </p>
+  <div id="list"></div>
+  <script>
+    const KEY = "helix_braid_stamps_v1";
+    const bag = JSON.parse(localStorage.getItem(KEY) || "[]");
+    const list = document.getElementById("list");
+    if (!bag.length) list.innerHTML = "<p>No stamps yet. Run the desk.</p>";
+    bag.forEach(r => {
+      const d = document.createElement("div");
+      d.className = "row";
+      d.innerHTML = "<div class='id'>" + r.id + "</div><div class='meta'>" + (r.ts||"") + " · ref " + (r.ref||"") + " · Solan " + r.solanV + " · Lumari " + r.lumariV + "</div><p>" + (r.idea||"") + "</p>";
+      list.appendChild(d);
+    });
+    document.getElementById("exp").onclick = () => {
+      const blob = new Blob([JSON.stringify(bag, null, 2)], {type:"application/json"});
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "braid-stamps.json";
+      a.click();
+    };
+    document.getElementById("wipe").onclick = () => {
+      localStorage.removeItem(KEY);
+      location.reload();
+    };
+  </script>
+</body>
+</html>
