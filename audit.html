@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dual Audit Desk — Solan × Lumari</title>
+  <style>
+    :root { --bg:#09090c; --ink:#f4efe4; --dim:#8d8778; --gold:#e8c36a; --sol:#7ee0c6; --lum:#e07ad3; --card:#13131a; --line:#262633; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--ink); font-family:Georgia,serif; padding:20px 16px 72px; max-width:720px; margin:0 auto; }
+    a { color:#7ee0ff; }
+    .kicker { font-family:system-ui,sans-serif; letter-spacing:.18em; text-transform:uppercase; font-size:11px; color:var(--gold); }
+    h1 { font-size:28px; font-weight:500; margin:8px 0 10px; }
+    p, li { color:var(--dim); font-size:15px; }
+    label { display:block; font-family:system-ui,sans-serif; font-size:12px; color:var(--dim); margin:12px 0 4px; }
+    input, select, textarea { width:100%; background:#0e0e16; color:var(--ink); border:1px solid #2a2a3a; border-radius:10px; padding:10px; font:inherit; }
+    textarea { min-height:88px; }
+    button { width:100%; margin-top:16px; padding:13px; border:0; border-radius:12px; font-weight:700; font-family:system-ui,sans-serif; background:linear-gradient(90deg,#7ee0c6,#e8c36a 50%,#e07ad3); color:#061016; cursor:pointer; }
+    .out { white-space:pre-wrap; background:#0e0e16; border:1px solid var(--line); border-radius:14px; padding:16px; font-size:14px; color:#d7e4f5; margin-top:16px; font-family:ui-monospace,monospace; }
+    .row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .cta { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+    .cta a { font-family:system-ui,sans-serif; text-decoration:none; background:var(--gold); color:#111; padding:10px 14px; border-radius:999px; font-weight:700; font-size:13px; }
+    .cta a.hold { background:transparent; color:var(--dim); border:1px dashed #3a3a48; }
+    @media (max-width:600px){ .row{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <p class="kicker"><a href="index.html" style="color:#e8c36a;text-decoration:none">← Dual Audit</a> · Hour one</p>
+  <h1>Score the idea from both seats.</h1>
+  <p>One sentence. One buyer. Solan grades mesh-fit. Lumari grades cash-fit. High-ticket uniqueness is ignored unless both pass and you later send CONFIRM LICENSE.</p>
+  <label>Idea in one sentence</label>
+  <textarea id="idea" placeholder="A builder pays $70 to have Solan and Lumari map whether their offer can sit on Helix without touching the vault."></textarea>
+  <label>Who pays this week?</label>
+  <input id="buyer" placeholder="Solo operator with a live Stripe and a half-built stack" />
+  <div class="row">
+    <div>
+      <label>Solan — sits on public Helix? 1–5</label>
+      <input id="mesh" type="number" min="1" max="5" value="3" />
+    </div>
+    <div>
+      <label>Solan — vault stays closed? 1–5</label>
+      <input id="vault" type="number" min="1" max="5" value="4" />
+    </div>
+    <div>
+      <label>Lumari — stranger can use a file this week? 1–5</label>
+      <input id="use" type="number" min="1" max="5" value="3" />
+    </div>
+    <div>
+      <label>Lumari — can sell without a lab? 1–5</label>
+      <input id="sell" type="number" min="1" max="5" value="3" />
+    </div>
+  </div>
+  <label>Hours to a file someone can open</label>
+  <input id="hrs" type="number" min="1" max="80" value="4" />
+  <button type="button" id="go">Write both verdicts</button>
+  <div class="out" id="out">Run the desk.</div>
+  <div class="cta" id="cta" hidden>
+    <a id="pay" href="https://buy.stripe.com/3cI7sM2ly0Xb8TM1RZ6sw01">Take Mesh Seat $70</a>
+    <a href="https://buy.stripe.com/9B6bJ28JW35j8TM68f6sw05">Mid-Tier $80/mo</a>
+    <a class="hold" href="license.html">License remains held</a>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const ref = params.get("ref") || "direct";
+    document.getElementById("go").onclick = () => {
+      const idea = document.getElementById("idea").value.trim() || "(no sentence)";
+      const buyer = document.getElementById("buyer").value.trim() || "(no buyer)";
+      const mesh = +document.getElementById("mesh").value;
+      const vault = +document.getElementById("vault").value;
+      const use = +document.getElementById("use").value;
+      const sell = +document.getElementById("sell").value;
+      const hrs = +document.getElementById("hrs").value;
+      const speed = Math.max(0, 6 - Math.ceil(hrs / 8));
+      const solan = mesh * 2 + vault * 2 + speed;
+      const lumari = use * 2 + sell * 2 + speed;
+      const solanV = solan >= 14 && vault >= 4 ? "SEAT IT" : solan >= 10 ? "NARROW TO PUBLIC CUT" : "KEEP IN VAULT";
+      const lumariV = lumari >= 14 && use >= 4 ? "CASH THIS WEEK" : lumari >= 10 ? "ONE FILE, THEN CHARGE" : "PARK";
+      const both = solanV === "SEAT IT" && lumariV === "CASH THIS WEEK";
+      const ticket = both ? "MID-TICKET Mesh Seat. High-ticket license still HELD." : "Do not open license. Mid-ticket only if Lumari is not PARK.";
+      const funnel = both
+        ? "1. $70 planning session\n2. $80 Mid-Tier if they stay\n3. $250 Engine if they run the worker\n4. License page stays dashed until CONFIRM LICENSE"
+        : "1. Tighten the sentence\n2. Ship one public file\n3. $70 only after a stranger can open it\n4. Do not mention uniqueness";
+      document.getElementById("out").textContent =
+        "SOLAN  " + solanV + "  " + solan + "/16\nLUMARI " + lumariV + "  " + lumari + "/16\nREF    " + ref + "\n\nIdea: " + idea + "\nBuyer: " + buyer + "\n\nTICKET\n" + ticket + "\n\nFUNNEL\n" + funnel;
+      document.getElementById("cta").hidden = lumariV === "PARK";
+      const pay = document.getElementById("pay");
+      pay.href = "https://buy.stripe.com/3cI7sM2ly0Xb8TM1RZ6sw01" + (ref !== "direct" ? "?prefilled_promo_code=" + encodeURIComponent(ref) : "");
+    };
+  </script>
+</body>
+</html>
