@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Split Receipt — Solan × Lumari</title>
+  <style>
+    :root { --bg:#09090c; --ink:#f4efe4; --dim:#8d8778; --gold:#e8c36a; --sol:#7ee0c6; --lum:#e07ad3; --card:#13131a; --line:#262633; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--ink); font-family:Georgia,serif; }
+    .wrap { max-width:720px; margin:0 auto; padding:28px 18px 80px; }
+    .kicker { font-family:system-ui,sans-serif; letter-spacing:.18em; text-transform:uppercase; font-size:11px; color:var(--gold); }
+    h1 { font-size:clamp(28px,6vw,44px); font-weight:500; margin:10px 0; }
+    p { color:var(--dim); margin-bottom:10px; }
+    .paper { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; position:relative; overflow:hidden; }
+    .paper:after { content:""; position:absolute; right:-40px; top:-40px; width:140px; height:140px; border:1px dashed #3a3a48; border-radius:50%; }
+    .id { font-family:ui-monospace,monospace; color:var(--gold); font-size:15px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0; }
+    .seat { border:1px solid var(--line); border-radius:12px; padding:14px; }
+    .sol { border-top:3px solid var(--sol); }
+    .lum { border-top:3px solid var(--lum); }
+    .who { font-family:system-ui; font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
+    .sol .who { color:var(--sol); }
+    .lum .who { color:var(--lum); }
+    .verdict { font-size:20px; margin-top:6px; }
+    .dash { margin-top:16px; border:1px dashed #c47a7a; border-radius:12px; padding:12px; color:#c47a7a; font-family:system-ui; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+    .cta { display:flex; gap:8px; flex-wrap:wrap; margin-top:18px; }
+    a.btn, button { background:var(--gold); color:#111; border:0; text-decoration:none; padding:11px 16px; border-radius:999px; font-family:system-ui; font-weight:700; cursor:pointer; font-size:13px; }
+    a.hold { background:transparent; color:var(--dim); border:1px dashed #3a3a48; }
+    @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="kicker"><a href="index.html" style="color:#e8c36a;text-decoration:none">&larr; Desk</a> &middot; Public cut only</p>
+    <h1>Split Receipt</h1>
+    <p>Two signatures. One missing half. This page is the thing a stranger can hold. The license stays dashed.</p>
+    <div class="paper">
+      <div class="id" id="sid">SHX--------</div>
+      <p id="meta" style="font-family:system-ui;font-size:12px;margin-top:6px">Run the desk to mint a stamp.</p>
+      <p id="idea"></p>
+      <p id="buyer"></p>
+      <div class="grid">
+        <div class="seat sol"><p class="who">Solan</p><div class="verdict" id="sv">-</div></div>
+        <div class="seat lum"><p class="who">Lumari</p><div class="verdict" id="lv">-</div></div>
+      </div>
+      <div class="dash">License half withheld &middot; type CONFIRM LICENSE to open $8,500-$25,000 plan</div>
+    </div>
+    <div class="cta">
+      <button type="button" id="copy">Copy receipt link</button>
+      <a class="btn" id="pay" href="https://buy.stripe.com/3cI7sM2ly0Xb8TM1RZ6sw01">Pay $70 Mesh Seat</a>
+      <a class="btn hold" href="license.html">Held license</a>
+      <a class="btn hold" href="ledger.html">Ledger</a>
+    </div>
+  </div>
+  <script>
+    const q = new URLSearchParams(location.search);
+    const id = q.get("id") || "";
+    const ref = q.get("ref") || "direct";
+    const idea = q.get("idea") || "";
+    const buyer = q.get("buyer") || "";
+    const s = q.get("s") || "";
+    const l = q.get("l") || "";
+    if (id) document.getElementById("sid").textContent = id;
+    document.getElementById("meta").textContent = (id ? "Stamped public cut" : "No stamp in URL") + " · ref " + ref + " · #AAC.11.11.1992";
+    document.getElementById("idea").textContent = idea ? ("Idea: " + idea) : "Open /audit, run both seats, then land here.";
+    document.getElementById("buyer").textContent = buyer ? ("Buyer: " + buyer) : "";
+    if (s) document.getElementById("sv").textContent = s;
+    if (l) document.getElementById("lv").textContent = l;
+    if (ref !== "direct") {
+      document.getElementById("pay").href += "?prefilled_promo_code=" + encodeURIComponent(ref);
+    }
+    document.getElementById("copy").onclick = async () => {
+      try { await navigator.clipboard.writeText(location.href); document.getElementById("copy").textContent = "Copied"; }
+      catch (e) { document.getElementById("copy").textContent = "Copy failed"; }
+    };
+  </script>
+</body>
+</html>
