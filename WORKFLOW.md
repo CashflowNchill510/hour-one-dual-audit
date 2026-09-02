@@ -1,12 +1,12 @@
-# Hour-One Fix Kit — Solan × Lumari
+# First Hour Bridge — Solan × Lumari
 
 Owner: Anthony Angel Campos / Forever Forward ION  
 Seats: Solan (structure) · Lumari (cash)  
 Geohash: `#AAC.11.11.1992`  
-Stamp: `SHX-20260901-FIX`  
+Stamp: `SHX-20260902-HOUR`  
 Rule: audits may ship. Core ideas and the high-ticket license need the exact phrase `CONFIRM LICENSE`.
 
-This file is the automation. If a later hour repeats the same prompt, remix **this file** or Finder Pulse. Do not mint a second brand.
+This file is the automation. If a later hour repeats the same prompt, remix **this file** or `/finder`. Do not mint a second brand.
 
 ---
 
@@ -21,21 +21,22 @@ Incoming sentence hit Hour-One markers again (`hour one`, `audit`, `deploy`, `af
 | Ticket | mid | Mesh Seat $70 → Mid-Tier $80 → Engine $250 |
 | License | held | $8,500–$25,000 plan stays dashed |
 
-Mode: **REPEAT LOOP — remix only.** Uniqueness is not scored.
+Mode: **REPEAT LOOP — remix only.** Uniqueness is not scored.  
+Remix: landing became First Hour Bridge. Same desk. New stamp.
 
 ---
 
 ## Loop you run (and can fix)
 
 1. Paste the incoming sentence into `/finder`. Do not open a new chat first.
-2. Finder counts markers.  
-   - `REPEAT` (≥5 markers) → change **one** public file.  
-   - `NEW CUT` → one new HTML page, same desk.  
+2. Finder counts markers.
+   - `REPEAT` (≥5 markers) → change **one** public file.
+   - `NEW CUT` → one new HTML page, same desk.
    - `VAULT LEAK` → stop. Do not deploy.
 3. Score Solan mesh/vault + Lumari use/sell. Never score uniqueness in hour one.
 4. Route `PARK` / `NARROW` / `SEAT IT` + `CASH THIS WEEK` / `ONE FILE` / `PARK`.
 5. Stamp `SHX-YYYYMMDD-XXXX`. Ledger lives in the browser. Export JSON into Notion **Hour-One Verdicts**.
-6. Push `CashflowNchill510/hour-one-dual-audit`. If Vercel GitHub app is linked, production updates. If not, manual deploy to the existing project.
+6. Push `CashflowNchill510/hour-one-dual-audit`. If Vercel GitHub app is linked, production updates. If not, manual deploy to project `prj_N3sNtbfGfOQH7jenetMWecue5f45`.
 7. Cash path is existing Eternal Dragon AI Stripe links only. No new SKU.
 8. Do not copy files from `The-Solveriegn-Helix`.
 
@@ -50,6 +51,8 @@ Mode: **REPEAT LOOP — remix only.** Uniqueness is not scored.
 - Another landing page with a new name
 - Gmail auto-send (draft-only if you wire it)
 - Daily 05:00 automation until first cash proof
+- Second Vercel project / second brand
+- Linear, Slack, extra Drive folders
 
 ---
 
@@ -69,7 +72,7 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 
 ## Owner-only fixes (the machine cannot do these)
 
-1. **Vercel GitHub app.** Team `foreverfoward510-4414s-projects` returns `repo_no_access` on `hour-one-dual-audit`. Connect the GitHub app with write access, then link the existing project `prj_N3sNtbfGfOQH7jenetMWecue5f45`. Until then every remix is a manual deploy.
+1. **Vercel GitHub app.** Team `foreverfoward510-4414s-projects` still returned `repo_no_access`. Connect the GitHub app with write access, then link project `prj_N3sNtbfGfOQH7jenetMWecue5f45`. Until then every remix is a manual deploy. Close issue #5 when it works.
 2. **Do not type `CONFIRM LICENSE`** unless you want the $8,500–$25,000 buy button. Typing it is the only unlock.
 3. **First $70.** Until a stranger pays, skip Manus, skip extra MCP, skip a second domain.
 4. **Witness handle.** Pick one handle and share `/audit?ref=THAT`. Dual Witness split is 30% of $70, 15% of first Mid-Tier month. Write it in Stripe later.
