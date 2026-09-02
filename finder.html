@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pacific Wake — Solan × Lumari</title>
+<title>Loop Finder — Solan × Lumari</title>
 <style>
 :root{--bg:#09090c;--ink:#f4efe4;--dim:#8d8778;--gold:#e8c36a;--sol:#7ee0c6;--lum:#e07ad3;--card:#13131a;--line:#262633;--hold:#c47a7a}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -37,19 +37,19 @@ code{color:var(--gold)}
 </head>
 <body>
 <div class="wrap">
-<p class="kicker"><a href="/" style="color:#e8c36a;text-decoration:none">← Desk</a> · SHX-20260902-WAKE · #AAC.11.11.1992 · America/Los_Angeles</p>
-<h1>Pacific Wake</h1>
-<p>Same calendar day. Landing stays First Hour Bridge. Finder now stamps the operator clock in San Pablo, not UTC. If UTC and Pacific disagree on the date, we say so. License stays dashed.</p>
+<p class="kicker"><a href="/" style="color:#e8c36a;text-decoration:none">← Desk</a> · SHX-20260902-0911 · #AAC.11.11.1992 · America/Los_Angeles</p>
+<h1>Loop Finder</h1>
+<p>Do not invent a second automation. This page finds the one already seated: Finder → Dual seats → Split Receipt → $70 Mesh Seat → Dual Witness. Landing stays First Hour Bridge. License stays dashed.</p>
 <div class="banner" id="locknote">Reading Pacific date…</div>
 <div class="braid">
-<article class="seat sol"><p class="who">Solan — structure</p><h2>Whose “today”?</h2><p>Hour-one is the owner’s first hour. Stamps use America/Los_Angeles. Do not rewrite <code>/</code>. Do not mint a third Vercel project.</p></article>
-<article class="seat lum"><p class="who">Lumari — cash</p><h2>Did a stranger pay yet?</h2><p>No new SKU. $70 / $80 / $250 only. If this cannot become a file someone opens today Pacific, park it. Skip extra MCP until first cash.</p></article>
+<article class="seat sol"><p class="who">Solan — structure</p><h2>Find, do not mint</h2><p>If the sentence asks for a new pipeline, name the live desk first. Same Pacific day already stamped = remix Finder or WORKFLOW. Never rewrite <code>/</code>.</p></article>
+<article class="seat lum"><p class="who">Lumari — cash</p><h2>Cash path is already wired</h2><p>$70 / $80 / $250 live. Extra MCP, Manus, Voice, a second domain — park until a stranger pays. High-ticket needs <code>CONFIRM LICENSE</code>.</p></article>
 </div>
 <label>Incoming prompt or idea</label>
 <textarea id="raw" placeholder="hour one audit, deploy, affiliates, hold license…"></textarea>
 <label>Who pays this week?</label>
 <input id="buyer" placeholder="Solo operator with a live Stripe and a half-built stack"/>
-<button type="button" id="go">Wake both seats</button>
+<button type="button" id="go">Find the automation</button>
 <div class="out" id="out">Paste the prompt. We will not score uniqueness. Clock is Pacific.</div>
 <div id="cta" hidden>
 <a class="btn" id="receipt" href="/receipt">Open Split Receipt</a>
@@ -63,9 +63,10 @@ code{color:var(--gold)}
 <li>Paste here before you open a new agent thread.</li>
 <li>SAME HOUR LOCK = do not rewrite <code>/</code>. Change Finder or WORKFLOW.md.</li>
 <li>REPEAT (new Pacific day) = one public file. NEW CUT = one new HTML page on this desk. VAULT LEAK = stop.</li>
-<li>Stamp SHX-YYYYMMDD-XXXX on the Pacific date. Export /ledger JSON into Notion Hour-One Verdicts.</li>
+<li>Stamp SHX-YYYYMMDD-HHMM on the Pacific clock. Export /ledger JSON into Notion Hour-One Verdicts.</li>
 <li>Push CashflowNchill510/hour-one-dual-audit. Until Vercel GitHub app is linked, manual-deploy <code>prj_N3sNtbfGfOQH7jenetMWecue5f45</code> only.</li>
 <li>First $70 before Manus, Voice, Automations, or a second domain.</li>
+<li>If Finder keeps saying SAME HOUR LOCK, the product is this desk. Stop opening chats. Record one Dual Audit and send <code>/audit?ref=HANDLE</code>.</li>
 </ol>
 </div>
 </div>
@@ -103,7 +104,7 @@ const pacific=dayKeyTZ(TZ);
 const utc=dayKeyTZ("UTC");
 const prior=todaysStamps();
 document.getElementById("locknote").textContent = prior.length
-  ? ("PACIFIC WAKE · "+prior.length+" stamp(s) already today "+pacific+" PT. First was "+(prior[prior.length-1].id||prior[0].id)+". Landing stays First Hour Bridge."+(pacific!==utc?" UTC date is "+utc+" — ignore it.":""))
+  ? ("LOOP FINDER · "+prior.length+" stamp(s) already today "+pacific+" PT. First was "+(prior[prior.length-1].id||prior[0].id)+". Landing stays First Hour Bridge. Automation already found."+(pacific!==utc?" UTC date is "+utc+" — ignore it.":""))
   : ("No Pacific stamp for "+pacific+" PT in this browser."+(pacific!==utc?" UTC still says "+utc+".":"")+" If markers fire, this becomes the first stamp of the Pacific day.");
 let lastRow="";
 document.getElementById("go").onclick=()=>{
@@ -115,6 +116,7 @@ const hits=hitList.length;
 const repeat=hits>=5;
 const already=todaysStamps().length>0;
 const vaultLeak=/solveriegn|vault prompt|quetzalcoatl/i.test(low)&&/sell|license|white.?label/i.test(low);
+const askingFind=/workflow|automation|find(ing)? this|mcp|pipeline/i.test(low);
 const mesh=vaultLeak?2:5, vault=vaultLeak?2:5, use=repeat?5:4, sell=repeat?4:3, hrs=repeat?1:4;
 const speed=Math.max(0,6-Math.ceil(hrs/8));
 const solan=mesh*2+vault*2+speed, lumari=use*2+sell*2+speed;
@@ -123,25 +125,27 @@ const lumariV=lumari>=14&&use>=4?"CASH THIS WEEK":lumari>=10?"ONE FILE, THEN CHA
 const mode=vaultLeak?"VAULT LEAK — do not deploy":(repeat&&already)?"SAME HOUR LOCK — remix Finder/WORKFLOW only":repeat?"REPEAT LOOP — remix one public file":"NEW PUBLIC CUT";
 const stamp=stampNow();
 const clock="CLOCK  Pacific "+dayKeyTZ(TZ)+"  UTC "+dayKeyTZ("UTC")+(dayKeyTZ(TZ)!==dayKeyTZ("UTC")?"  DATE SPLIT":"  ALIGNED");
+const found="FOUND AUTOMATION (already live)\n1. /finder  — detect loop, stamp Pacific\n2. /audit   — Solan structure + Lumari cash\n3. /receipt — torn license half\n4. $70      — https://buy.stripe.com/3cI7sM2ly0Xb8TM1RZ6sw01\n5. /affiliate + /relay — Dual Witness 30% of $70\n6. Notion Hour-One Verdicts + GitHub issue = ledger\nNOT FOUND / HELD\n- $8,500–$25,000 checkout (needs CONFIRM LICENSE)\n- Vercel GitHub auto-deploy (issue #5)\n- Manus / Voice / extra MCP (needs first cash)";
 const fix=vaultLeak
   ?"OWNER FIX\n1. Stop. Do not deploy.\n2. Send /license if they asked to sell uniqueness.\n3. Do not open The-Solveriegn-Helix."
   :(repeat&&already)
-  ?"OWNER FIX\n1. Landing already remixed today Pacific. Do not touch index.html.\n2. Change Finder or WORKFLOW.md only.\n3. Link GitHub app to Vercel (issue #5). Do not create a third project.\n4. Keep $70 / $80 / $250. License dashed.\n5. First cash before Manus or extra MCP."
+  ?"OWNER FIX\n1. Landing already remixed today Pacific. Do not touch index.html.\n2. Change Finder or WORKFLOW.md only.\n3. Link GitHub app to Vercel (issue #5). Do not create a third project.\n4. Keep $70 / $80 / $250. License dashed.\n5. First cash before Manus or extra MCP.\n6. If this is the third SAME HOUR LOCK today, stop opening agent threads. Record one Dual Audit."
   :repeat
   ?"OWNER FIX\n1. Remix one file. Do not mint a new brand.\n2. Link GitHub app to Vercel team.\n3. Keep $70 / $80 / $250. License dashed.\n4. First cash before Manus."
   :"OWNER FIX\n1. Ship one public HTML page on this desk.\n2. Stamp + Notion row.\n3. $70 only after a stranger can open it.";
+const askLine=askingFind?"ASK   sentence wanted a new pipeline. Named the live one instead.\n":"";
 const bag=JSON.parse(localStorage.getItem(KEY)||"[]");
-bag.unshift({id:stamp,ts:new Date().toISOString(),tz:TZ,day:dayKeyTZ(TZ),ref:"finder-wake",idea:raw.slice(0,180),buyer,solanV,lumariV,mode});
+bag.unshift({id:stamp,ts:new Date().toISOString(),tz:TZ,day:dayKeyTZ(TZ),ref:"finder-loop",idea:raw.slice(0,180),buyer,solanV,lumariV,mode});
 localStorage.setItem(KEY,JSON.stringify(bag.slice(0,40)));
-lastRow="Name: "+stamp+" Pacific Wake\nStamp: "+stamp+"\nDate: "+dayKeyTZ(TZ)+"\nSolan: SEAT IT\nLumari: CASH THIS WEEK\nTicket: Mesh Seat\nRef: hour-one-loop\nMode: "+mode+"\nTZ: America/Los_Angeles";
-document.getElementById("out").textContent="MODE   "+mode+"\nSTAMP  "+stamp+"\n"+clock+"\nSOLAN  "+solanV+"  "+solan+"/16\nLUMARI "+lumariV+"  "+lumari+"/16\nHITS   "+hits+"/12  "+(hitList.join(", ")||"none")+"\nTODAY  "+todaysStamps().length+" stamp(s) Pacific\n\nIdea: "+raw.slice(0,240)+"\nBuyer: "+buyer+"\n\n"+fix+"\n\nNOTION ROW\n"+lastRow;
-const q=new URLSearchParams({id:stamp,ref:"finder-wake",idea:raw.slice(0,120),buyer,s:solanV,l:lumariV});
+lastRow="Name: "+stamp+" Loop Finder\nStamp: "+stamp+"\nDate: "+dayKeyTZ(TZ)+"\nSolan: SEAT IT\nLumari: CASH THIS WEEK\nTicket: Mesh Seat\nRef: hour-one-loop\nMode: "+mode+"\nTZ: America/Los_Angeles";
+document.getElementById("out").textContent="MODE   "+mode+"\nSTAMP  "+stamp+"\n"+clock+"\nSOLAN  "+solanV+"  "+solan+"/16\nLUMARI "+lumariV+"  "+lumari+"/16\nHITS   "+hits+"/12  "+(hitList.join(", ")||"none")+"\nTODAY  "+todaysStamps().length+" stamp(s) Pacific\n"+askLine+"\nIdea: "+raw.slice(0,240)+"\nBuyer: "+buyer+"\n\n"+found+"\n\n"+fix+"\n\nNOTION ROW\n"+lastRow;
+const q=new URLSearchParams({id:stamp,ref:"finder-loop",idea:raw.slice(0,120),buyer,s:solanV,l:lumariV});
 document.getElementById("receipt").href="/receipt?"+q.toString();
 document.getElementById("cta").hidden=lumariV==="PARK"||vaultLeak;
-document.getElementById("locknote").textContent="WOKE THIS RUN · "+stamp+" · "+mode+" · "+dayKeyTZ(TZ)+" PT";
+document.getElementById("locknote").textContent="FOUND THIS RUN · "+stamp+" · "+mode+" · "+dayKeyTZ(TZ)+" PT";
 };
 document.getElementById("copyrow").onclick=async()=>{
-  try{await navigator.clipboard.writeText(lastRow||"Run the wake first.");document.getElementById("copyrow").textContent="Copied";}
+  try{await navigator.clipboard.writeText(lastRow||"Run the finder first.");document.getElementById("copyrow").textContent="Copied";}
   catch(e){document.getElementById("copyrow").textContent="Copy failed";}
 };
 </script>
