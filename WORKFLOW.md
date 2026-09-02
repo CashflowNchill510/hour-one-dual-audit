@@ -1,18 +1,18 @@
-# First Hour Bridge — Solan × Lumari
+# Same Hour Lock — Solan × Lumari
 
 Owner: Anthony Angel Campos / Forever Forward ION  
 Seats: Solan (structure) · Lumari (cash)  
 Geohash: `#AAC.11.11.1992`  
-Stamp: `SHX-20260902-HOUR`  
+Stamp: `SHX-20260902-LOCK`  
 Rule: audits may ship. Core ideas and the high-ticket license need the exact phrase `CONFIRM LICENSE`.
 
-This file is the automation. If a later hour repeats the same prompt, remix **this file** or `/finder`. Do not mint a second brand.
+This file is the automation. If a later hour repeats the same prompt, remix **this file** or `/finder`. Do not mint a second brand. Do not rewrite `/` twice in one calendar day.
 
 ---
 
 ## This hour's verdict
 
-Incoming sentence hit Hour-One markers again (`hour one`, `audit`, `deploy`, `affiliate`, `license`, `mid ticket`, `solan`, `lumari`, `mcp`, `funnel`).
+Incoming sentence hit Hour-One markers again (`hour one`, `audit`, `deploy`, `affiliate`, `license`, `mid ticket`, `solan`, `lumari`, `mcp`, `funnel`). First Hour Bridge already shipped earlier today (`SHX-20260902-HOUR`).
 
 | Seat | Score | Call |
 | --- | --- | --- |
@@ -21,22 +21,23 @@ Incoming sentence hit Hour-One markers again (`hour one`, `audit`, `deploy`, `af
 | Ticket | mid | Mesh Seat $70 → Mid-Tier $80 → Engine $250 |
 | License | held | $8,500–$25,000 plan stays dashed |
 
-Mode: **REPEAT LOOP — remix only.** Uniqueness is not scored.  
-Remix: landing became First Hour Bridge. Same desk. New stamp.
+Mode: **SAME HOUR LOCK — remix Finder/WORKFLOW only.** Uniqueness is not scored.  
+Remix: Finder became Same Hour Lock. Landing stays First Hour Bridge.
 
 ---
 
 ## Loop you run (and can fix)
 
 1. Paste the incoming sentence into `/finder`. Do not open a new chat first.
-2. Finder counts markers.
-   - `REPEAT` (≥5 markers) → change **one** public file.
+2. Finder counts markers and checks this browser for a stamp from today.
+   - `SAME HOUR LOCK` (repeat + already stamped today) → change Finder or WORKFLOW only. Leave `/` alone.
+   - `REPEAT` (≥5 markers, first stamp of the day) → change **one** public file.
    - `NEW CUT` → one new HTML page, same desk.
    - `VAULT LEAK` → stop. Do not deploy.
 3. Score Solan mesh/vault + Lumari use/sell. Never score uniqueness in hour one.
 4. Route `PARK` / `NARROW` / `SEAT IT` + `CASH THIS WEEK` / `ONE FILE` / `PARK`.
-5. Stamp `SHX-YYYYMMDD-XXXX`. Ledger lives in the browser. Export JSON into Notion **Hour-One Verdicts**.
-6. Push `CashflowNchill510/hour-one-dual-audit`. If Vercel GitHub app is linked, production updates. If not, manual deploy to project `prj_N3sNtbfGfOQH7jenetMWecue5f45`.
+5. Stamp `SHX-YYYYMMDD-XXXX`. Ledger lives in the browser. Export JSON into Notion **Hour-One Verdicts**. Finder can copy the Notion row.
+6. Push `CashflowNchill510/hour-one-dual-audit`. If Vercel GitHub app is linked, production updates. If not, manual deploy to project `prj_N3sNtbfGfOQH7jenetMWecue5f45` only. Do not use the extra `finder-pulse` project.
 7. Cash path is existing Eternal Dragon AI Stripe links only. No new SKU.
 8. Do not copy files from `The-Solveriegn-Helix`.
 
@@ -46,12 +47,13 @@ Remix: landing became First Hour Bridge. Same desk. New stamp.
 
 - Uniqueness scoring
 - New Stripe SKUs / license checkout
+- A second landing rewrite on the same day
 - Manus task until one $70 session converts
 - NFT mint
 - Another landing page with a new name
 - Gmail auto-send (draft-only if you wire it)
 - Daily 05:00 automation until first cash proof
-- Second Vercel project / second brand
+- Second Vercel project / second brand (`finder-pulse` already exists unused — leave it)
 - Linear, Slack, extra Drive folders
 
 ---
@@ -76,6 +78,7 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 2. **Do not type `CONFIRM LICENSE`** unless you want the $8,500–$25,000 buy button. Typing it is the only unlock.
 3. **First $70.** Until a stranger pays, skip Manus, skip extra MCP, skip a second domain.
 4. **Witness handle.** Pick one handle and share `/audit?ref=THAT`. Dual Witness split is 30% of $70, 15% of first Mid-Tier month. Write it in Stripe later.
+5. **Ignore `finder-pulse`.** That second Vercel project is a loop artifact. Cash and stamps stay on `hour-one-dual-audit`.
 
 ---
 
@@ -92,7 +95,7 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 | Manus API | skill present | Skip until cash proof. |
 | Voice / Automations | available | Skip until one paid session. |
 
-Do not add Linear, Slack, or a second Vercel project named after a new brand.
+Do not add Linear, Slack, or a third Vercel project named after a new brand.
 
 ---
 
@@ -101,7 +104,7 @@ Do not add Linear, Slack, or a second Vercel project named after a new brand.
 - **If three strangers open a receipt in 7 days:** keep Mesh Seat. Add a calendar link after $70, still no license checkout.
 - **If one $70 converts:** wire Gmail draft-only + Notion row from Finder export. Still no Manus.
 - **If a partner wants white-label seats:** send `/license` and stop. That is high-ticket. Needs `CONFIRM LICENSE`.
-- **If Finder keeps hitting REPEAT:** the product is the desk. Change copy on one page. Do not invent Finder Pulse 2.
+- **If Finder keeps hitting SAME HOUR LOCK:** the product is the desk. Stop opening new agent threads. Record one Dual Audit and send `/audit?ref=HANDLE`.
 
 ---
 
@@ -111,6 +114,7 @@ Do not add Linear, Slack, or a second Vercel project named after a new brand.
 - Stranger-can-use < 4 → do not run ads.
 - Sentence sells uniqueness → send `/license` and stop.
 - Finder hits ≥ 5 Hour-One markers → remix only.
+- Same calendar day already stamped → do not rewrite `/`.
 - Vercel `repo_no_access` → manual deploy, do not create a third project.
 
 ---
