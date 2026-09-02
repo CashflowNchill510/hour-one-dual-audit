@@ -2,14 +2,15 @@
 
 Public mesh only. High-ticket Sovereign Architecture License remains HELD until `CONFIRM LICENSE`.
 
-Stamp: `SHX-20260902-0911`  
-Clock: America/Los_Angeles
+Stamp: `SHX-20260902-1046`  
+Clock: America/Los_Angeles  
+Finder remix: Compound Lock
 
 ## Live
 
 - https://hour-one-dual-audit-foreverfoward510-4414s-projects.vercel.app
 - `/` — First Hour Bridge (locked this Pacific day)
-- `/finder` — Loop Finder
+- `/finder` — Compound Lock
 - `/audit` — Dual seats
 - `/receipt` — Split Receipt
 - `/relay` — partner script

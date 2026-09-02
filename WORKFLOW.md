@@ -1,9 +1,9 @@
-# Loop Finder — Solan × Lumari
+# Compound Lock — Solan × Lumari
 
 Owner: Anthony Angel Campos / Forever Forward ION  
 Seats: Solan (structure) · Lumari (cash)  
 Geohash: `#AAC.11.11.1992`  
-Stamp: `SHX-20260902-0911`  
+Stamp: `SHX-20260902-1046`  
 Clock: `America/Los_Angeles` (San Pablo). UTC is a log only.  
 Rule: audits may ship. Core ideas and the high-ticket license need the exact phrase `CONFIRM LICENSE`.
 
@@ -13,7 +13,7 @@ This file is the automation. If a later hour repeats the same prompt, remix **th
 
 ## This hour's verdict
 
-Incoming sentence hit Hour-One markers again at 09:11 Pacific. First Hour Bridge, Same Hour Lock, and Pacific Wake already shipped today. Landing stays locked.
+Incoming sentence hit Hour-One markers again at 10:46 Pacific. First Hour Bridge, Pacific Wake, Same Hour Lock, and Loop Finder already shipped today. Live alias was still serving Finder Pulse and `/finder` 404'd. That is a deploy drift, not a new product.
 
 | Seat | Score | Call |
 | --- | --- | --- |
@@ -22,17 +22,18 @@ Incoming sentence hit Hour-One markers again at 09:11 Pacific. First Hour Bridge
 | Ticket | mid | Mesh Seat $70 → Mid-Tier $80 → Engine $250 |
 | License | held | $8,500–$25,000 plan stays dashed |
 
-Mode: **SAME HOUR LOCK — remix Finder/WORKFLOW only.** Uniqueness is not scored.  
-Remix: Finder became Loop Finder. It names the live pipeline instead of inventing a new one. Landing stays First Hour Bridge.
+Mode: **THREAD BRAKE — compound stamps, no new agent thread.** Uniqueness is not scored.  
+Remix: Finder became Compound Lock. It stacks same-day stamps and names the live pipeline instead of inventing a new one. Landing stays First Hour Bridge.
 
-Why this is good: the last sentence asked for a workflow for finding this automation. The automation was already seated. A fourth hour-one thread that mints another brand would be the leak.
+Why this is good: the sentence asked for a full create-code-deploy-affiliate pipeline. That pipeline is already seated. A fifth hour-one thread that mints another brand would be the leak. The useful public cut this hour is the thread brake plus a full manual deploy so `/finder` exists on the alias.
 
 ---
 
 ## Loop you run (and can fix)
 
 1. Paste the incoming sentence into `/finder`. Do not open a new chat first.
-2. Finder counts markers and checks this browser for a stamp from **today Pacific**.
+2. Finder counts markers and checks this browser for stamps from **today Pacific**.
+   - `THREAD BRAKE` (≥3 Pacific stamps today + repeat) → stop opening agent threads. Record one Dual Audit. Send `/audit?ref=HANDLE`.
    - `SAME HOUR LOCK` (repeat + already stamped today PT) → change Finder or WORKFLOW only. Leave `/` alone.
    - `REPEAT` (≥5 markers, first stamp of the Pacific day) → change **one** public file.
    - `NEW CUT` → one new HTML page, same desk.
@@ -40,10 +41,10 @@ Why this is good: the last sentence asked for a workflow for finding this automa
 3. Score Solan mesh/vault + Lumari use/sell. Never score uniqueness in hour one.
 4. Route `PARK` / `NARROW` / `SEAT IT` + `CASH THIS WEEK` / `ONE FILE` / `PARK`.
 5. Stamp `SHX-YYYYMMDD-HHMM` using Pacific date + Pacific time. Ledger lives in the browser. Export JSON into Notion Hour-One Verdicts.
-6. Push `CashflowNchill510/hour-one-dual-audit`. If Vercel GitHub app is linked, production updates. If not, manual deploy to project `prj_N3sNtbfGfOQH7jenetMWecue5f45` only.
+6. Push `CashflowNchill510/hour-one-dual-audit`. If Vercel GitHub app is linked, production updates. If not, manual deploy to project `prj_N3sNtbfGfOQH7jenetMWecue5f45` only. Ignore `finder-pulse`.
 7. Cash path is existing Eternal Dragon AI Stripe links only. No new SKU.
 8. Do not copy files from `The-Solveriegn-Helix`.
-9. If Finder prints SAME HOUR LOCK three times in one Pacific day, stop opening agent threads. Record one Dual Audit. Send `/audit?ref=HANDLE`.
+9. If Finder prints THREAD BRAKE, the next hour is a human hour: link GitHub, record one audit, collect $70.
 
 ---
 
@@ -60,6 +61,7 @@ Why this is good: the last sentence asked for a workflow for finding this automa
 - Second Vercel project / second brand
 - Linear, Slack, extra Drive folders
 - Extra MCP for speed before first cash
+- A fifth agent thread today
 
 ---
 
@@ -84,7 +86,7 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 3. First $70 before Manus, extra MCP, or a second domain.
 4. Pick one witness handle and share `/audit?ref=THAT`.
 5. Ignore `finder-pulse`.
-6. Next incoming hour-one sentence goes into `/finder` only.
+6. Next incoming hour-one sentence goes into `/finder` only. Do not open another agent thread today.
 
 ---
 
@@ -96,7 +98,7 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 | Notion Hour-One hub + Verdicts | live | Keep |
 | Vercel team hobby | live site, unlinked git | Keep site. Fix GitHub app. |
 | Stripe payment links | live mid-ticket | Keep. No new product. |
-| Gmail | connected | Draft-only Dual Witness |
+| Gmail | connected | Draft-only Dual Witness after first $70 |
 | Google Drive | empty for this desk | Skip |
 | Manus API | skill present | Skip until cash |
 | Voice / Automations | available | Skip until cash |
@@ -108,8 +110,8 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 - Three strangers open a receipt in 7 days: keep Mesh Seat. Add a calendar link after $70.
 - One $70 converts: wire Gmail draft-only. Still no Manus.
 - Partner wants white-label: send `/license` and stop.
-- Finder keeps hitting SAME HOUR LOCK: stop opening new agent threads.
-- Loop Finder names the live pipeline and owner still asks for a new site: send `/license`. Do not ship.
+- Finder keeps hitting SAME HOUR LOCK or THREAD BRAKE: stop opening new agent threads.
+- Compound Lock names the live pipeline and owner still asks for a new site: send `/license`. Do not ship.
 
 ---
 
@@ -119,7 +121,7 @@ Public routes: `/` `/finder` `/audit` `/receipt` `/relay` `/ledger` `/affiliate`
 - Stranger-can-use < 4 → do not run ads.
 - Sentence sells uniqueness → send `/license` and stop.
 - Same Pacific day already stamped → do not rewrite `/`.
-- Third SAME HOUR LOCK in one Pacific day → no new agent thread.
+- Third SAME HOUR LOCK in one Pacific day → THREAD BRAKE. No new agent thread.
 
 ---
 
