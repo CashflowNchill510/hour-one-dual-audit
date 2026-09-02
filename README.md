@@ -2,18 +2,19 @@
 
 Public mesh only. High-ticket Sovereign Architecture License remains HELD until `CONFIRM LICENSE`.
 
-Stamp: `SHX-20260901-FIX`
+Stamp: `SHX-20260902-HOUR`
 
 ## Live
 
 - https://hour-one-dual-audit-foreverfoward510-4414s-projects.vercel.app
-- /finder — Finder Pulse (stamps increment; REPEAT remixed this hour)
-- /audit — Dual seats
-- /receipt — Split Receipt
-- /relay — partner script
-- /ledger — browser stamps
-- /license — held plan
-- /affiliate — Dual Witness
+- `/` — First Hour Bridge (this remix)
+- `/finder` — Finder Pulse
+- `/audit` — Dual seats
+- `/receipt` — Split Receipt
+- `/relay` — partner script
+- `/ledger` — browser stamps
+- `/license` — held plan
+- `/affiliate` — Dual Witness
 
 ## Cash (existing links, no new SKU)
 
