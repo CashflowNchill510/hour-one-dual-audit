@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vision log</title>
+<style>
+:root{--bg:#09090c;--ink:#f4efe4;--dim:#8d8778;--gold:#e8c36a;--card:#13131a;--line:#262633}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,serif}
+.wrap{max-width:720px;margin:0 auto;padding:32px 18px 80px}
+.kicker{font-family:system-ui;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--gold)}
+h1{font-size:clamp(28px,6vw,44px);font-weight:500;margin:12px 0}
+p,label,li{color:var(--dim);margin-bottom:8px;line-height:1.45}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0}
+input,textarea{width:100%;background:#0e0e16;color:#f4efe4;border:1px solid #262633;border-radius:10px;padding:10px;margin:6px 0 12px;font:16px system-ui}
+button,.btn{display:inline-block;background:var(--gold);color:#111;border:0;text-decoration:none;padding:12px 18px;border-radius:999px;font-family:system-ui;font-weight:700;cursor:pointer}
+pre{white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:13px;color:#d7e4f5}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="kicker">Pyramid vision locator · local only</p>
+<h1>Write it before it fades</h1>
+<p>Saves in this browser only. Screenshot or copy into Voice Memos. Working site note: Teotihuacán. Not a diagnosis.</p>
+<div class="card">
+<label>Sun / sky</label>
+<input id="sun" placeholder="middle of sky, right shoulder"/>
+<label>Age in the vision / body</label>
+<input id="age" placeholder="11–12, floating, facing north"/>
+<label>What you saw</label>
+<textarea id="saw" rows="5" placeholder="Sun pyramid color, Moon cladding, stars toward center"></textarea>
+<label>Intensity 1–10</label>
+<input id="int" type="number" min="1" max="10"/>
+<button type="button" onclick="save()">Stamp this log</button>
+</div>
+<pre id="out"></pre>
+<p><a class="btn" href="/archive" style="background:transparent;color:#e8c36a;border:1px solid #e8c36a">← Archive</a></p>
+</div>
+<script>
+function save(){
+  const row = {
+    t: new Date().toISOString(),
+    sun: sun.value, age: age.value, saw: saw.value, intensity: int.value,
+    note: 'Teotihuacan working match — field log not lab'
+  };
+  const all = JSON.parse(localStorage.getItem('aac_visions')||'[]');
+  all.unshift(row);
+  localStorage.setItem('aac_visions', JSON.stringify(all));
+  out.textContent = JSON.stringify(all.slice(0,8), null, 2);
+}
+out.textContent = localStorage.getItem('aac_visions') || 'no stamps yet';
+</script>
+</body>
+</html>
